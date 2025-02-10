@@ -38,7 +38,6 @@ import com.mucheng.mucute.client.game.module.misc.DesyncModule
 import com.mucheng.mucute.client.game.module.misc.NoClipModule
 import com.mucheng.mucute.client.game.module.misc.PositionLoggerModule
 import com.mucheng.mucute.client.game.module.misc.CrashModule
-import com.mucheng.mucute.client.game.module.misc.InstaBreakModule
 import com.mucheng.mucute.client.game.module.motion.AirJumpModule
 import com.mucheng.mucute.client.game.module.motion.AntiAFKModule
 import com.mucheng.mucute.client.game.module.motion.AutoWalkModule
@@ -122,7 +121,6 @@ object ModuleManager {
             add(DarknessModule())
             add(TimeShiftModule())
             add(CrashModule())
-            add(InstaBreakModule())
         }
     }
 
