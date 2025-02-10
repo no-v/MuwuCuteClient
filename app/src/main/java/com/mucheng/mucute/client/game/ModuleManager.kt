@@ -40,6 +40,7 @@ import com.mucheng.mucute.client.game.module.misc.NoClipModule
 import com.mucheng.mucute.client.game.module.misc.PositionLoggerModule
 import com.mucheng.mucute.client.game.module.misc.CrashModule
 import com.mucheng.mucute.client.game.module.misc.InstaBreakModule
+import com.mucheng.mucute.client.game.module.misc.PhaseModule
 import com.mucheng.mucute.client.game.module.motion.AirJumpModule
 import com.mucheng.mucute.client.game.module.motion.AntiAFKModule
 import com.mucheng.mucute.client.game.module.motion.AutoWalkModule
@@ -51,6 +52,7 @@ import com.mucheng.mucute.client.game.module.motion.MotionFlyModule
 import com.mucheng.mucute.client.game.module.motion.SpeedModule
 import com.mucheng.mucute.client.game.module.motion.SprintModule
 import com.mucheng.mucute.client.game.module.motion.WallClimbModule
+import com.mucheng.mucute.client.game.module.visual.ESPModule
 import com.mucheng.mucute.client.game.module.visual.FreeCameraModule
 import com.mucheng.mucute.client.game.module.visual.NoHurtCameraModule
 import com.mucheng.mucute.client.game.module.visual.TimeShiftModule
@@ -127,6 +129,8 @@ object ModuleManager {
             add(InstaBreakModule())
             add(BowAimbotModule())
             add(WallClimbModule())
+            add(PhaseModule())
+            add(ESPModule())
         }
     }
 
