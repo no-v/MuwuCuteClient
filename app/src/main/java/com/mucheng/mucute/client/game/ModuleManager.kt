@@ -46,13 +46,13 @@ import com.mucheng.mucute.client.game.module.motion.FlyModule
 import com.mucheng.mucute.client.game.module.motion.HighJumpModule
 import com.mucheng.mucute.client.game.module.motion.JetPackModule
 import com.mucheng.mucute.client.game.module.motion.MotionFlyModule
+import com.mucheng.mucute.client.game.module.motion.MotionVarModule
 import com.mucheng.mucute.client.game.module.motion.SpeedModule
 import com.mucheng.mucute.client.game.module.motion.SprintModule
-import com.mucheng.mucute.client.game.module.motion.WallClimbModule
 import com.mucheng.mucute.client.game.module.visual.FreeCameraModule
 import com.mucheng.mucute.client.game.module.visual.NoHurtCameraModule
-import com.mucheng.mucute.client.game.module.visual.TimeShiftModule
-import com.mucheng.mucute.client.game.module.visual.WeatherControlModule
+import com.mucheng.mucute.client.game.module.misc.TimeShiftModule
+import com.mucheng.mucute.client.game.module.misc.WeatherControllerModule
 import com.mucheng.mucute.client.game.module.visual.ZoomModule
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -121,10 +121,9 @@ object ModuleManager {
             add(VillageHeroModule())
             add(DarknessModule())
             add(TimeShiftModule())
-            add(WeatherControlModule())
+            add(WeatherControllerModule())
             //  add(CrasherModule())
-            add(WallClimbModule())
-
+            add(MotionVarModule())
 
         }
     }
@@ -137,6 +136,9 @@ object ModuleManager {
         val jsonObject = buildJsonObject {
             put("modules", buildJsonObject {
                 _modules.forEach {
+                    if (it.private) {
+                        return@forEach
+                    }
                     put(it.name, it.toJson())
                 }
             })
