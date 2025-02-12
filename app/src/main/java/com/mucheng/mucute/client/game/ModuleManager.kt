@@ -48,6 +48,7 @@ import com.mucheng.mucute.client.game.module.motion.JetPackModule
 import com.mucheng.mucute.client.game.module.motion.MotionFlyModule
 import com.mucheng.mucute.client.game.module.motion.SpeedModule
 import com.mucheng.mucute.client.game.module.motion.SprintModule
+import com.mucheng.mucute.client.game.module.motion.WallClimbModule
 import com.mucheng.mucute.client.game.module.visual.FreeCameraModule
 import com.mucheng.mucute.client.game.module.visual.NoHurtCameraModule
 import com.mucheng.mucute.client.game.module.visual.TimeShiftModule
@@ -122,6 +123,7 @@ object ModuleManager {
             add(TimeShiftModule())
             add(WeatherControlModule())
             //  add(CrasherModule())
+            add(WallClimbModule())
 
 
         }
