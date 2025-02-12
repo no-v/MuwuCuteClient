@@ -58,10 +58,10 @@ private val moduleCache = HashMap<ModuleCategory, List<Module>>()
 
 private fun fetchCachedModules(moduleCategory: ModuleCategory): List<Module> {
     val cachedModules = moduleCache[moduleCategory] ?: ModuleManager
-                .modules
-                .fastFilter {
-                    it.category === moduleCategory
-                }
+        .modules
+        .fastFilter {
+            it.category === moduleCategory
+        }
     moduleCache[moduleCategory] = cachedModules
     return cachedModules
 }
@@ -69,7 +69,7 @@ private fun fetchCachedModules(moduleCategory: ModuleCategory): List<Module> {
 @Composable
 fun ModuleContent(moduleCategory: ModuleCategory) {
     val modules = fetchCachedModules(moduleCategory)
-    
+
     LazyColumn(
         Modifier
             .fillMaxSize(),

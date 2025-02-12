@@ -1,5 +1,6 @@
 [versions]
 agp = "8.8.0"
+pikolo = "2.0.1"
 kotlin = "2.1.10"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -29,6 +30,7 @@ bcprov = "1.70"
 okhttp = "4.12.0"
 
 [libraries]
+pikolo = { module = "com.github.Madrapps:Pikolo", version.ref = "pikolo" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }

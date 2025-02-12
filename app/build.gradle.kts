@@ -119,6 +119,7 @@ fun DependencyHandler.implementationRelay() {
 
 dependencies {
     implementationRelay()
+    implementation(libs.pikolo)
     implementation(libs.kotlinx.serialization.json.jvm)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

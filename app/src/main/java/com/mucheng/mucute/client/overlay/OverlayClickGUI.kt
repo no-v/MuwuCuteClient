@@ -63,6 +63,8 @@ class OverlayClickGUI : OverlayWindow() {
 
     @Composable
     override fun Content() {
+        val surfaceColor = MaterialTheme.colorScheme.surface
+
         Column(
             Modifier
                 .fillMaxSize()
@@ -80,6 +82,7 @@ class OverlayClickGUI : OverlayWindow() {
                 modifier = Modifier
                     .padding(40.dp)
                     .fillMaxSize()
+                    .background(surfaceColor)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null
@@ -116,7 +119,7 @@ class OverlayClickGUI : OverlayWindow() {
                         label = "animatedPage",
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(MaterialTheme.colorScheme.surfaceContainer),
+                            .background(surfaceColor),
                     ) { moduleCategory ->
                         Box(Modifier.fillMaxSize()) {
                             if (moduleCategory === ModuleCategory.Config) {
