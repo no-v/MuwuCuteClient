@@ -1,6 +1,5 @@
 package com.mucheng.mucute.client.overlay
 
-import android.content.res.Configuration
 import android.os.Build
 import android.view.WindowManager
 import androidx.compose.animation.AnimatedContent
@@ -27,7 +26,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -63,8 +61,6 @@ class OverlayClickGUI : OverlayWindow() {
 
     @Composable
     override fun Content() {
-        val surfaceColor = MaterialTheme.colorScheme.surface
-
         Column(
             Modifier
                 .fillMaxSize()
@@ -82,7 +78,6 @@ class OverlayClickGUI : OverlayWindow() {
                 modifier = Modifier
                     .padding(40.dp)
                     .fillMaxSize()
-                    .background(surfaceColor)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null
@@ -119,10 +114,10 @@ class OverlayClickGUI : OverlayWindow() {
                         label = "animatedPage",
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(surfaceColor),
+                            .background(MaterialTheme.colorScheme.surfaceContainer)
                     ) { moduleCategory ->
                         Box(Modifier.fillMaxSize()) {
-                            if (moduleCategory === ModuleCategory.Config) {
+                            if (moduleCategory == ModuleCategory.Config) {
                                 ConfigCategoryContent()
                                 return@Box
                             }

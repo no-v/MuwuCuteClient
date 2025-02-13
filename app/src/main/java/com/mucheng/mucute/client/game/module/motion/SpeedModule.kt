@@ -20,10 +20,10 @@ class SpeedModule : Module("speed", ModuleCategory.Motion) {
         val packet = interceptablePacket.packet
 
         if (packet is PlayerAuthInputPacket) {
-            // Check if motion is greater than 0.0 and inputData contains VERTICAL_COLLISION
+
             if (packet.motion.length() > 0.0 && packet.inputData.contains(PlayerAuthInputData.VERTICAL_COLLISION)) {
 
-                // Create and send the SetEntityMotionPacket with current player's motion
+
                 val motionPacket = SetEntityMotionPacket().apply {
                     runtimeEntityId = session.localPlayer.runtimeEntityId
                     motion = Vector3f.from(
@@ -33,7 +33,7 @@ class SpeedModule : Module("speed", ModuleCategory.Motion) {
                     )
                 }
 
-                // Send the motion update packet
+
                 session.clientBound(motionPacket)
             }
         }
